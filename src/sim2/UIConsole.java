@@ -289,6 +289,7 @@ public class UIConsole {
 
     private void afficherTotalPoints(Groupe groupe) {
         ArrayList<Druide> listeDruide = groupe.getListeDruide();
+        
         System.out.print("\nPoints : ");
         for (int i = 0; i < listeDruide.size(); ++i) {
             int valeurSurface = 0;
@@ -308,6 +309,7 @@ public class UIConsole {
                 valeur = valeurSurface + valeurTombee;
             }
             System.out.print( listeDruide.get(i).getPoint() + valeur );
+                    listeDruide.get(i).setPoint(listeDruide.get(i).getPoint() + valeur);
             }
             System.out.print("\t\t");
 
