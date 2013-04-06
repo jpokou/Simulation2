@@ -27,20 +27,36 @@ public class UIConsole {
         public UIConsole(ControleurTournoi controleur) {
             
         }
-
+        
         public void afficherGroupe(Groupe groupe) {
-            ArrayList<Druide> listeDruide = groupe.getListeDruide();
             System.out.println("Groupe : " + groupe.getNom() + " (" + tournoi.getRondeActive().toString() + ")");
             
+
+            afficherPoints(groupe);
+            afficherDruides(groupe);
+            afficherSurface(groupe);
+            afficherTombee(groupe);
+
+            
+        }
+        
+        public void afficherPoints(Groupe groupe) {
             System.out.print("Points : ");
-            for (int i = 0; i < listeDruide.size(); ++i) {
+            for (int i = 0; i < groupe.getListeDruide().size(); ++i) {
                 System.out.print("\t\t" + groupe.getListeDruide().get(i).getPoint());
             }
-            
+        }
+        
+        public void afficherDruides(Groupe groupe) {
             System.out.print("\nDruides : ");
-            for (int i = 0; i < listeDruide.size(); ++i) {
+            
+            for (int i = 0; i < groupe.getListeDruide().size(); ++i) {
                 System.out.print("\t\t" + groupe.getListeDruide().get(i).getNom());
             }
+        }
+        
+        public void afficherSurface(Groupe groupe) {
+            ArrayList<Druide> listeDruide = groupe.getListeDruide();
             
             System.out.print("\nSurface : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
@@ -76,7 +92,11 @@ public class UIConsole {
                     
                 }
                 
-            } 
+            }
+        }
+        
+        public void afficherTombee(Groupe groupe) {
+            ArrayList<Druide> listeDruide = groupe.getListeDruide();
             
             System.out.print("\nTombee : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
@@ -109,7 +129,6 @@ public class UIConsole {
                 }
                 
             } 
-            
         }
         
 	public void menuPrincipal() {
@@ -119,41 +138,45 @@ public class UIConsole {
             tournoi.setRondeActive(ronde);
             tournoi.demarrerTournoi();
             
-            System.out.println("Tournoi De Runes");
-            System.out.println("(L)  Lancer les runes");
-            System.out.println("(Q)  Quitter ");
-            System.out.println("(LX) Lancer les runes pour un groupe X");
-            System.out.println("---------------------------");
-            System.out.println("Choix : ");
-            String choix = Clavier.lireString();
-            
-            
-            if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.length() == 0) {
-                
-                for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
-                    afficherGroupe(tournoi.getListeGroupe().get(i));
-                    System.out.println("\n");
-                }
-                            
-            } else if(choix.length() == 2 && (choix.charAt(0) == 'L' || choix.charAt(0) == 'l')) {
-                int index = -1;
-                try{
-                    index = Integer.parseInt("" + choix.charAt(1)) - 1;
-                } catch (NumberFormatException e) {
-                    System.out.println("Groupe invalide");
-                }
-                
-                if (index != -1) {
-                    ArrayList<Groupe> listeGroupe = new ArrayList<Groupe>();
-                    listeGroupe.add(tournoi.getListeGroupe().get(index));
-                    tournoi.lancerDesGroupes(listeGroupe);
-                    afficherGroupe(tournoi.getListeGroupe().get(index));
-                }
-                
-            } else {
-                System.out.println("Panoramix vous dit merci et a la prochaine");
-                System.exit(0);
-            } 
+            while(true) {
+                System.out.println("\n");
+                System.out.println("Tournoi De Runes");
+                System.out.println("(L)  Lancer les runes");
+                System.out.println("(Q)  Quitter ");
+                System.out.println("(LX) Lancer les runes pour un groupe X");
+                System.out.println("---------------------------");
+                System.out.println("Choix : ");
+                String choix = Clavier.lireString();
+
+
+                if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.length() == 0) {
+
+                    for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
+                        afficherGroupe(tournoi.getListeGroupe().get(i));
+                        System.out.println("\n");
+                    }
+
+                } else if(choix.length() == 2 && (choix.charAt(0) == 'L' || choix.charAt(0) == 'l')) {
+                    int index = -1;
+
+                    try{
+                        index = Integer.parseInt("" + choix.charAt(1)) - 1;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Groupe invalide");
+                    }
+
+                    if (index != -1) {
+                        ArrayList<Groupe> listeGroupe = new ArrayList<Groupe>();
+                        listeGroupe.add(tournoi.getListeGroupe().get(index));
+                        tournoi.lancerDesGroupes(listeGroupe);
+                        afficherGroupe(tournoi.getListeGroupe().get(index));
+                    }
+
+                } else {
+                    System.out.println("Panoramix vous dit merci et à la prochaine.");
+                    System.exit(0);
+                } 
+            }
                 
 	}
 
