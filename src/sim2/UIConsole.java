@@ -62,6 +62,22 @@ public class UIConsole {
                 
             } 
             
+            System.out.print("\nValeur S : ");
+            for (int i = 0; i < listeDruide.size(); ++i) {
+                
+                System.out.print("\t\t");
+                
+                for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
+                    Rune rune = listeDruide.get(i).getListeRune().get(j);
+                    
+                    if (rune.surface) {
+                        System.out.print(rune.getPoint());
+                    }
+                    
+                }
+                
+            } 
+            
             System.out.print("\nTombee : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
                 
@@ -78,6 +94,22 @@ public class UIConsole {
                 
             }
 
+            System.out.print("\nValeur T : ");
+            for (int i = 0; i < listeDruide.size(); ++i) {
+                
+                System.out.print("\t\t");
+                
+                for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
+                    Rune rune = listeDruide.get(i).getListeRune().get(j);
+                    
+                    if (!rune.surface) {
+                        System.out.print(rune.getPoint());
+                    }
+                    
+                }
+                
+            } 
+            
         }
         
 	public void menuPrincipal() {
@@ -85,23 +117,32 @@ public class UIConsole {
             tournoi.demarrerTournoi();
             
             System.out.println("Tournoi De Runes");
-            System.out.println("(L)ancer les runes");
-            System.out.println("(Q)uitter ");
+            System.out.println("(L)  Lancer les runes");
+            System.out.println("(Q)  Quitter ");
+            System.out.println("(LX) Lancer les runes pour un groupe X");
             System.out.println("---------------------------");
             System.out.println("Choix : ");
-            char choix = Clavier.lireChar();
+            String choix = Clavier.lireString();
             
-            if (choix == 'l' || choix == 'L' || choix == '\n') {
+            if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.compareTo("\n") == 0) {
                 
                 for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
                     afficherGroupe(tournoi.getListeGroupe().get(i));
                     System.out.println("\n");
                 }
                             
+            } else if(choix.length() == 2 && (choix.charAt(0) == 'L' || choix.charAt(0) == 'l')) {
+                
+                try{
+                    int index = Integer.parseInt("" + choix.charAt(1));
+                } catch (NumberFormatException e) {
+                    System.out.println("Groupe Inexistant");
+                }
+                
             } else {
                 System.out.println("Panoramix vous dit merci et a la prochaine");
                 System.exit(0);
-            }
+            } 
                 
 	}
 
@@ -158,12 +199,12 @@ public class UIConsole {
             }
             
             for (int i = 0; i < NB_RUNE_ANSUZ; ++i) {
-                rune = new Rune("Ansuz", 1, 'a');
+                rune = new Rune("Ansuz", 2, 'a');
                 listeRune.add(rune);
             }            
             
             for (int i = 0; i < NB_RUNE_FEHU; ++i) {
-                rune = new Rune("Fehu", 1, 'f');
+                rune = new Rune("Fehu", 3, 'f');
                 listeRune.add(rune);
             }
             
