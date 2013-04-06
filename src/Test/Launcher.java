@@ -11,7 +11,8 @@ public class Launcher {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		throw new UnsupportedOperationException();
+            
+            SetupApplication setupApplication = new SetupApplication();
 	}
 
 }

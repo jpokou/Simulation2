@@ -13,12 +13,16 @@ public class UIConsole {
 	 * 
 	 * @param controleur
 	 */
-	public UIConsole(Tournoi controleur) {
-		throw new UnsupportedOperationException();
+	public UIConsole(Tournoi tournoi, ControleurTournoi controleur) {
+		this.controleur = controleur;
 	}
+        
+        public UIConsole(ControleurTournoi controleur) {
+            
+        }
 
 	public void menuPrincipal() {
-		throw new UnsupportedOperationException();
+		System.out.println("MENU");
 	}
 
 	public void saisirNomGroupe() {

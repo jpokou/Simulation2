@@ -17,9 +17,14 @@ public class ControleurTournoi {
 	 * @param ui
 	 */
 	public ControleurTournoi(Tournoi tournoi, UIConsole ui) {
-		throw new UnsupportedOperationException();
+		this.tournoi = tournoi;
+                this.ui = ui;
 	}
 
+        
+        public ControleurTournoi() {
+        }
+        
 	/**
 	 * 
 	 * @param listeGroupe
@@ -48,4 +53,12 @@ public class ControleurTournoi {
 		throw new UnsupportedOperationException();
 	}
 
+        public void setTournoi(Tournoi tournoi) {
+            this.tournoi = tournoi;
+        }
+        
+        public void setUI(UIConsole ui) {
+            this.ui = ui;
+        }
+        
 }

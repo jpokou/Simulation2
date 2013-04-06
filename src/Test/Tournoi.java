@@ -12,7 +12,7 @@ public class Tournoi {
 	private Druide druideGagnant;
 
 	public Tournoi() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public ArrayList<Groupe> getListeGroupe() {
