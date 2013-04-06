@@ -22,16 +22,6 @@ public class UIConsole {
         public UIConsole(ControleurTournoi controleur) {
             
         }
-
-        public void simulerTour() {
-            Tournoi tournoi = creerTournoi();
-            
-            for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
-                afficherGroupe(tournoi.getListeGroupe().get(i));
-                System.out.println("\n");
-            }
-            
-        }
         
         public void afficherGroupe(Groupe groupe) {
             System.out.println("Groupe : " + groupe.getNom());
@@ -48,8 +38,27 @@ public class UIConsole {
         }
         
 	public void menuPrincipal() {
-		System.out.println("MENU");
-                creerTournoi();
+            Tournoi tournoi = creerTournoi();
+            
+            System.out.println("Tournoi De Runes");
+            System.out.println("(L)ancer les runes");
+            System.out.println("(Q)uitter ");
+            System.out.println("---------------------------");
+            System.out.println("Choix : ");
+            char choix = Clavier.lireChar();
+            
+            if (choix == 'l' || choix == 'L' || choix == '\n') {
+                
+                for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
+                    afficherGroupe(tournoi.getListeGroupe().get(i));
+                    System.out.println("\n");
+                }
+                            
+            } else {
+                System.out.println("Panoramix vous dit merci et a la prochaine");
+                System.exit(0);
+            }
+                
 	}
 
 	public void saisirNomGroupe() {
