@@ -5,12 +5,13 @@
 package sim2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Ronde {
 
-	private ArrayList<Groupe> listGroupe;
+	private List<Groupe> listGroupe;
 
-	public ArrayList<Groupe> getListGroupe() {
+	public List<Groupe> getListGroupe() {
 		return this.listGroupe;
 	}
 
@@ -18,7 +19,7 @@ public abstract class Ronde {
 	 * 
 	 * @param listGroupe
 	 */
-	public void setListGroupe(ArrayList<Groupe> listGroupe) {
+	public void setListGroupe(List<Groupe> listGroupe) {
 		this.listGroupe = listGroupe;
 	}
         
@@ -26,7 +27,7 @@ public abstract class Ronde {
 	 * 
 	 * @param listeRune
 	 */
-	public void lancerRunes(ArrayList<Rune> listeRune) {
+	public void lancerRunes(List<Rune> listeRune) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -34,9 +35,7 @@ public abstract class Ronde {
 	 * 
 	 * @param listeRune
 	 */
-	public int calculerPoints(ArrayList<Rune> listeRune) {
-		throw new UnsupportedOperationException();
-	}
+	public abstract int calculerPoints(List<Rune> listeRune);
         
         public abstract void jouerRonde();
 
