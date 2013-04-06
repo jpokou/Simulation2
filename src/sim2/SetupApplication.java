@@ -21,7 +21,7 @@ public class SetupApplication {
 	}
 
 	public void lancerApplication() {
-            ui.menuPrincipal();
+            ui.simulerTour();
 	}
 
 }
