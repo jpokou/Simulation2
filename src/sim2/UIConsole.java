@@ -30,12 +30,12 @@ public class UIConsole {
         
         public void afficherGroupe(Groupe groupe) {
             System.out.println("Groupe : " + groupe.getNom() + " (" + tournoi.getRondeActive().toString() + ")");
-            
-
             afficherPoints(groupe);
             afficherDruides(groupe);
             afficherSurface(groupe);
             afficherTombee(groupe);
+            afficherTotalValeur(groupe);
+            afficherTotalPoints(groupe);
 
             
         }
@@ -254,4 +254,62 @@ public class UIConsole {
             return new Druide(nom, creerRunes(), true, 20);
             
         }
+        
+        private void afficherTotalValeur(Groupe groupe) {
+            ArrayList<Druide> listeDruide = groupe.getListeDruide();
+            System.out.print("\nValeur : ");
+        
+            for (int i = 0; i < listeDruide.size(); ++i) {
+            int valeurSurface = 0;
+            int valeurTombee = 0;
+            System.out.print("\t\t");
+            for(int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {          
+                if(listeDruide.get(i).getListeRune().get(j).surface){
+                    valeurSurface = valeurSurface + listeDruide.get(i).getListeRune().get(j).point;
+                }else if(!(listeDruide.get(i).getListeRune().get(j).surface)){
+                    valeurTombee = valeurTombee - listeDruide.get(i).getListeRune().get(j).point;
+                }
+            }
+            System.out.print(valeurSurface);
+            if(valeurTombee > 0 ){
+                System.out.print(" + ");
+            }
+            
+            System.out.print(valeurTombee);
+            System.out.print(" = ");
+            if(valeurTombee >= 0 ){
+                System.out.print(valeurSurface - valeurTombee);
+            }else{
+                System.out.print(valeurSurface + valeurTombee);
+            }
+            
+            }
+            System.out.print("\t\t");
+    }
+
+    private void afficherTotalPoints(Groupe groupe) {
+        ArrayList<Druide> listeDruide = groupe.getListeDruide();
+        System.out.print("\nPoints : ");
+        for (int i = 0; i < listeDruide.size(); ++i) {
+            int valeurSurface = 0;
+            int valeurTombee = 0;
+            int valeur = 0;
+            System.out.print("\t\t");
+            for(int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {          
+                if(listeDruide.get(i).getListeRune().get(j).surface){
+                    valeurSurface = valeurSurface + listeDruide.get(i).getListeRune().get(j).point;
+                }else if(!(listeDruide.get(i).getListeRune().get(j).surface)){
+                    valeurTombee = valeurTombee - listeDruide.get(i).getListeRune().get(j).point;
+                }
+            }
+            if(valeurTombee >= 0 ){
+                valeur = valeurSurface - valeurTombee;
+            }else{
+                valeur = valeurSurface + valeurTombee;
+            }
+            System.out.print( listeDruide.get(i).getPoint() + valeur );
+            }
+            System.out.print("\t\t");
+
+    }
 }

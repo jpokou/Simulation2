@@ -10,7 +10,7 @@ import java.util.List;
 public class Druide {
 
 	private String nom;
-	private List<Rune> listeDruide;
+	private List<Rune> listeRune;
 	private boolean actif;
 	private int point;
         
@@ -23,7 +23,7 @@ public class Druide {
 	 */
 	public Druide(String nom, List<Rune> listeRune, boolean actif, int point) {
 		this.nom = nom;
-                this.listeDruide = listeRune;
+                this.listeRune = listeRune;
                 this.actif = actif;
                 this.point = point;
 	}
@@ -42,7 +42,7 @@ public class Druide {
 	}
 
 	public List<Rune> getListeRune() {
-		return this.listeDruide;
+		return this.listeRune;
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class Druide {
 	 * @param listeRune
 	 */
 	public void setListeRune(ArrayList<Rune> listeRune) {
-		this.listeDruide = listeRune;
+		this.listeRune = listeRune;
 	}
 
 	public boolean getActif() {
@@ -76,6 +76,7 @@ public class Druide {
 	public void setPoint(int point) {
 		this.point = point;
 	}
+        
 
 	
 
