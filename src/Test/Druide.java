@@ -8,20 +8,35 @@ import java.util.ArrayList;
 
 public class Druide {
 
-	private int nom;
+	private String nom;
 	private ArrayList<Rune> listeDruide;
 	private boolean actif;
 	private int point;
+        
+        /**
+	 * 
+	 * @param nom
+	 * @param listeRune
+	 * @param actif
+	 * @param point
+	 */
+	public Druide(String nom, ArrayList<Rune> listeRune, boolean actif, int point) {
+		this.nom = nom;
+                this.listeDruide = listeRune;
+                this.actif = actif;
+                this.point = point;
+	}
+        
 
-	public void getNom() {
-		throw new UnsupportedOperationException();
+	public  String getNom() {
+		return this.nom;
 	}
 
 	/**
 	 * 
 	 * @param nom
 	 */
-	public void setNom(int nom) {
+	public void setNom(String  nom) {
 		this.nom = nom;
 	}
 
@@ -61,15 +76,6 @@ public class Druide {
 		this.point = point;
 	}
 
-	/**
-	 * 
-	 * @param nom
-	 * @param listeRune
-	 * @param actif
-	 * @param point
-	 */
-	public Druide(String nom, ArrayList<Rune> listeRune, boolean actif, int point) {
-		throw new UnsupportedOperationException();
-	}
+	
 
 }
