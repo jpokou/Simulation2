@@ -114,7 +114,10 @@ public class UIConsole {
         
 	public void menuPrincipal() {
             Tournoi tournoi = creerTournoi();
-            tournoi.demarrerTournoi();
+            Ronde ronde = new RondeElimination(null);
+            ronde.setListGroupe(tournoi.getListeGroupe());
+            tournoi.setRondeActive(ronde);
+            //tournoi.demarrerTournoi();
             
             System.out.println("Tournoi De Runes");
             System.out.println("(L)  Lancer les runes");
@@ -134,7 +137,12 @@ public class UIConsole {
             } else if(choix.length() == 2 && (choix.charAt(0) == 'L' || choix.charAt(0) == 'l')) {
                 
                 try{
-                    int index = Integer.parseInt("" + choix.charAt(1));
+                    int index = Integer.parseInt("" + choix.charAt(1)) - 1;
+                    ArrayList<Groupe> listeGroupe = new ArrayList<Groupe>();
+                    listeGroupe.add(tournoi.getListeGroupe().get(index));
+                    tournoi.lancerDesGroupes(listeGroupe);
+                    afficherGroupe(tournoi.getListeGroupe().get(index));
+                    
                 } catch (NumberFormatException e) {
                     System.out.println("Groupe Inexistant");
                 }

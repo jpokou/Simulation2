@@ -11,6 +11,8 @@ public class Tournoi {
 
 	private ArrayList<Groupe> listeGroupe;
 	private Druide druideGagnant;
+        private Ronde rondeActive;
+        
 	public Tournoi() {
 		
 	}
@@ -40,9 +42,18 @@ public class Tournoi {
 	}
 
 	public void demarrerTournoi() {
-            Ronde ronde = new RondeElimination(listeGroupe);  
-            ronde.jouerRonde(listeGroupe);
+            //Ronde ronde = new RondeElimination(listeGroupe);  
+            rondeActive.jouerRonde(listeGroupe);
 	}
+        
+        public void lancerDesGroupes(ArrayList<Groupe> listeGroupe) {
+            //Ronde ronde = new RondeElimination(listeGroupe);
+            rondeActive.jouerRonde(listeGroupe);
+        }
+        
+        public void setRondeActive(Ronde ronde) {
+            rondeActive = ronde;
+        }
 /*
 	public void simulerTournoi() {
 		throw new UnsupportedOperationException();
