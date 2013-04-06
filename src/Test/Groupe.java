@@ -5,14 +5,15 @@
 package Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Groupe {
 
 	private ArrayList<Druide> ListeDruide;
-	private int nom;
+	private String nom;
 
 	public ArrayList<Druide> getListeDruide() {
-		throw new UnsupportedOperationException();
+		return ListeDruide;
 	}
 
 	/**
@@ -20,18 +21,18 @@ public class Groupe {
 	 * @param ListeDruide
 	 */
 	public void setListeDruide(ArrayList<Druide> ListeDruide) {
-		throw new UnsupportedOperationException();
+		this.ListeDruide = ListeDruide;
 	}
 
-	public void getNom() {
-		throw new UnsupportedOperationException();
+	public String getNom() {
+		return this.nom;
 	}
 
 	/**
 	 * 
 	 * @param nom
 	 */
-	public void setNom(int nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
@@ -41,11 +42,18 @@ public class Groupe {
 	 * @param listeDruide
 	 */
 	public Groupe(String nom, ArrayList<Druide> listeDruide) {
-		throw new UnsupportedOperationException();
+            this.nom = nom;
+            this.ListeDruide = listeDruide;
 	}
 
-	public ArrayList<Druide> getDruidesActifs() {
-		throw new UnsupportedOperationException();
+	public List<Druide> getDruidesActifs() {
+            List<Druide> lesDruides = new ArrayList<Druide>(); 
+            for(int i = 0; i < this.ListeDruide.size(); ++i ){        
+                if( this.ListeDruide.get(i).getActif() == true ){
+                    lesDruides.add(this.ListeDruide.get(i));
+                } 
+            }
+            return lesDruides;
 	}
 
 }
