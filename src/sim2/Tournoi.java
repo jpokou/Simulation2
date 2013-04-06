@@ -41,7 +41,7 @@ public class Tournoi {
 
 	public void demarrerTournoi() {
             Ronde ronde = new RondeElimination(listeGroupe);  
-            ronde.jouerRonde(null);
+            ronde.jouerRonde(listeGroupe);
 	}
 /*
 	public void simulerTournoi() {
