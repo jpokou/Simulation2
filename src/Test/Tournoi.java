@@ -5,26 +5,26 @@
 package Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tournoi {
 
-	private ArrayList<Groupe> ListeGroupe;
+	private List<Groupe> listeGroupe;
 	private Druide druideGagnant;
-
 	public Tournoi() {
 		
 	}
 
-	public ArrayList<Groupe> getListeGroupe() {
-		throw new UnsupportedOperationException();
+	public List<Groupe> getListeGroupe() {
+            return listeGroupe;
 	}
 
 	/**
 	 * 
 	 * @param ListeGroupe
 	 */
-	public void setListeGroupe(ArrayList<Groupe> ListeGroupe) {
-		throw new UnsupportedOperationException();
+	public void setListeGroupe(List<Groupe> listeGroupe) {
+		this.listeGroupe = listeGroupe;
 	}
 
 	public Druide getDruideGagnant() {
@@ -33,24 +33,26 @@ public class Tournoi {
 
 	/**
 	 * 
-	 * @param druideGagnat
+	 * @param druideGagnant
 	 */
-	public void setDruideGagnant(Druide druideGagnat) {
-		this.druideGagnant = druideGagnat;
+	public void setDruideGagnant(Druide druideGagnant) {
+		this.druideGagnant = druideGagnant;
 	}
 
 	public void demarrerTournoi() {
-		throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException();
 	}
-
+/*
 	public void simulerTournoi() {
 		throw new UnsupportedOperationException();
 	}
 
+*/
+        /*
 	public void enregistrerTournoi() {
 		throw new UnsupportedOperationException();
 	}
-
+*/
 	/**
 	 * 
 	 * @param nomFichier

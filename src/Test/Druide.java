@@ -5,11 +5,12 @@
 package Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Druide {
 
 	private String nom;
-	private ArrayList<Rune> listeDruide;
+	private List<Rune> listeDruide;
 	private boolean actif;
 	private int point;
         
@@ -20,7 +21,7 @@ public class Druide {
 	 * @param actif
 	 * @param point
 	 */
-	public Druide(String nom, ArrayList<Rune> listeRune, boolean actif, int point) {
+	public Druide(String nom, List<Rune> listeRune, boolean actif, int point) {
 		this.nom = nom;
                 this.listeDruide = listeRune;
                 this.actif = actif;
@@ -40,7 +41,7 @@ public class Druide {
 		this.nom = nom;
 	}
 
-	public ArrayList<Rune> getListeDruide() {
+	public List<Rune> getListeDruide() {
 		return this.listeDruide;
 	}
 
