@@ -127,7 +127,8 @@ public class UIConsole {
             System.out.println("Choix : ");
             String choix = Clavier.lireString();
             
-            if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.compareTo("\n") == 0) {
+            
+            if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.length() == 0) {
                 
                 for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
                     afficherGroupe(tournoi.getListeGroupe().get(i));
@@ -135,16 +136,18 @@ public class UIConsole {
                 }
                             
             } else if(choix.length() == 2 && (choix.charAt(0) == 'L' || choix.charAt(0) == 'l')) {
-                
+                int index = -1;
                 try{
-                    int index = Integer.parseInt("" + choix.charAt(1)) - 1;
+                    index = Integer.parseInt("" + choix.charAt(1)) - 1;
+                } catch (NumberFormatException e) {
+                    System.out.println("Groupe invalide");
+                }
+                
+                if (index != -1) {
                     ArrayList<Groupe> listeGroupe = new ArrayList<Groupe>();
                     listeGroupe.add(tournoi.getListeGroupe().get(index));
                     tournoi.lancerDesGroupes(listeGroupe);
                     afficherGroupe(tournoi.getListeGroupe().get(index));
-                    
-                } catch (NumberFormatException e) {
-                    System.out.println("Groupe Inexistant");
                 }
                 
             } else {
