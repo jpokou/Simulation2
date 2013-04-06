@@ -2,43 +2,29 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Test;
+package sim2;
 
 import java.util.ArrayList;
 
-public class Ronde {
-
-	private ArrayList<Groupe> listGroupe;
-
-	public ArrayList<Groupe> getListGroupe() {
-		return this.listGroupe;
-	}
+public class RondeElimination extends Ronde {
 
 	/**
 	 * 
-	 * @param listGroupe
+	 * @param listeGroupe
 	 */
-	public void setListGroupe(ArrayList<Groupe> listGroupe) {
-		this.listGroupe = listGroupe;
+	public RondeElimination(ArrayList<Groupe> listeGroupe) {
+		throw new UnsupportedOperationException();
 	}
 
 	public void jouerRonde() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void JouerPartie() {
+	public void jouerPartie() {
 		throw new UnsupportedOperationException();
 	}
 
 	public void jouerTour() {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param listeRune
-	 */
-	public void lancerRunes(ArrayList<Rune> listeRune) {
 		throw new UnsupportedOperationException();
 	}
 

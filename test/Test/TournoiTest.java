@@ -4,7 +4,10 @@
  */
 package Test;
 
+import sim2.Druide;
+import sim2.Tournoi;
 import java.util.ArrayList;
+import sim2.Rune;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

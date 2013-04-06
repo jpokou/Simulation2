@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication2;
+package sim2;
 
 import java.util.Random;
 

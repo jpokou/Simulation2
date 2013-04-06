@@ -4,7 +4,9 @@
  */
 package Test;
 
+import sim2.Druide;
 import java.util.ArrayList;
+import sim2.Rune;
 import org.junit.*;
 import static org.junit.Assert.*;
 
