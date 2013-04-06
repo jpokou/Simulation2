@@ -117,7 +117,7 @@ public class UIConsole {
             Ronde ronde = new RondeElimination(null);
             ronde.setListGroupe(tournoi.getListeGroupe());
             tournoi.setRondeActive(ronde);
-            //tournoi.demarrerTournoi();
+            tournoi.demarrerTournoi();
             
             System.out.println("Tournoi De Runes");
             System.out.println("(L)  Lancer les runes");
@@ -170,10 +170,14 @@ public class UIConsole {
             Tournoi tournoi = new Tournoi();
             Groupe groupe1 = creerGroupe("Dagazz", "Uruz", "Thurisaz", "Raido", "Kaunaan");
             Groupe groupe2 = creerGroupe("Eihwaz", "Gebo", "Wunjo", "Hagalaaz", "Nudiz");
+            Groupe groupe3 = creerGroupe("Nameless", "Boris", "Tony", "Jonathan", "Eric");
+            Groupe groupe4 = creerGroupe("Gaulois", "Asterix", "Obelix", "Panoramix", "Abraracoursix");
             
             ArrayList<Groupe> listeGroupe = new ArrayList<Groupe>();
             listeGroupe.add(groupe1);
             listeGroupe.add(groupe2);
+            listeGroupe.add(groupe3);
+            listeGroupe.add(groupe4);
             
             tournoi.setListeGroupe(listeGroupe);
             
