@@ -6,12 +6,22 @@ package Test;
 
 public class SetupApplication {
 
-	public void setupApplication() {
-		throw new UnsupportedOperationException();
+    
+        ControleurTournoi controleur = new ControleurTournoi();
+        UIConsole ui;
+    
+	public SetupApplication() {
+		
+            
+            this.controleur = new ControleurTournoi();
+            ui = new UIConsole(controleur);
+            
+            lancerApplication();
+            
 	}
 
 	public void lancerApplication() {
-		throw new UnsupportedOperationException();
+            ui.menuPrincipal();
 	}
 
 }
