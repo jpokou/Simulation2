@@ -34,18 +34,18 @@ public class UIConsole {
             
             System.out.print("Points : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
-                System.out.print("\t" + groupe.getListeDruide().get(i).getPoint());
+                System.out.print("\t\t" + groupe.getListeDruide().get(i).getPoint());
             }
             
             System.out.print("\nDruides : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
-                System.out.print("\t" + groupe.getListeDruide().get(i).getNom());
+                System.out.print("\t\t" + groupe.getListeDruide().get(i).getNom());
             }
             
             System.out.print("\nSurface : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
                 
-                System.out.print("\t");
+                System.out.print("\t\t");
                 
                 for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
                     Rune rune = listeDruide.get(i).getListeRune().get(j);
@@ -65,7 +65,7 @@ public class UIConsole {
             System.out.print("\nTombee : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
                 
-                System.out.print("\t");
+                System.out.print("\t\t");
                 
                 for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
                     Rune rune = listeDruide.get(i).getListeRune().get(j);

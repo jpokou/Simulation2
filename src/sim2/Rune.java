@@ -11,6 +11,9 @@ import java.util.Random;
  * @author kd991283
  */
 public class Rune {
+    
+    public static Random random = new Random();
+    
     public String nom;
     public boolean clair = true;
     public boolean surface = true;
@@ -26,10 +29,9 @@ public class Rune {
     
     public void lancer()
     {
-        double min = 0;
-        double max = 1;
-        double random1 = min + (Math.random()) * ((max-min)+1);
-        double random2 = min + (Math.random()) * ((max-min)+1);
+        
+        double random1 = random.nextDouble();
+        double random2 = random.nextDouble();
         
         if (random1 <= .5)
         {
@@ -44,8 +46,6 @@ public class Rune {
         } else {
             surface = false;
         }
-        
-        //int r = (new Random().nextInt(10-0) + 0);
         
     }
     
