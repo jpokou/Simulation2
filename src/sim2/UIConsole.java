@@ -136,7 +136,7 @@ public class UIConsole {
             Ronde ronde = new RondeElimination(null);
             ronde.setListGroupe(tournoi.getListeGroupe());
             tournoi.setRondeActive(ronde);
-            tournoi.demarrerTournoi();
+            //tournoi.demarrerTournoi();
             
             while(true) {
                 System.out.println("\n");
@@ -151,6 +151,8 @@ public class UIConsole {
 
                 if (choix.compareTo("l") == 0 || choix.compareTo("L") == 0 ||  choix.length() == 0) {
 
+                    tournoi.lancerDesGroupes(tournoi.getListeGroupe());
+                    
                     for (int i = 0; i < tournoi.getListeGroupe().size(); ++i) {
                         afficherGroupe(tournoi.getListeGroupe().get(i));
                         System.out.println("\n");

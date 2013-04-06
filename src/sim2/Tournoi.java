@@ -51,6 +51,11 @@ public class Tournoi {
             rondeActive.jouerRonde(listeGroupe);
         }
         
+        public void lancerDesGroupes(List<Groupe> listeGroupe) {
+            //Ronde ronde = new RondeElimination(listeGroupe);
+            rondeActive.jouerRonde(listeGroupe);
+        }
+        
         public Ronde getRondeActive() {
             return this.rondeActive;
         }
