@@ -1,4 +1,4 @@
-package tp1genie3;
+package sim2;
 import java.io.*;
 
 /**********************************************************
