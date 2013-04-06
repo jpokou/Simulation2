@@ -66,9 +66,10 @@ public class RondeElimination extends Ronde {
     public void jouerTour() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-    private int randomNbRunes() {
-        return (new Random().nextInt(10-0) + 0);
+
+    @Override
+    public String toString() {
+        return "ronde d'élimination";
     }
 
 }

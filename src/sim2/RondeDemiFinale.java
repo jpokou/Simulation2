@@ -59,5 +59,10 @@ public class RondeDemiFinale extends Ronde {
         }
         return resultat;
     }
+    
+    @Override
+    public String toString() {
+        return "ronde demi-finale";
+    }
 
 }

@@ -71,5 +71,10 @@ public class RondeFinale extends Ronde {
         }
         return resultat;
     }
+    
+    @Override
+    public String toString() {
+        return "ronde finale";
+    }
 
 }

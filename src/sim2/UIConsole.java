@@ -27,10 +27,10 @@ public class UIConsole {
         public UIConsole(ControleurTournoi controleur) {
             
         }
-        
+
         public void afficherGroupe(Groupe groupe) {
             ArrayList<Druide> listeDruide = groupe.getListeDruide();
-            System.out.println("Groupe : " + groupe.getNom());
+            System.out.println("Groupe : " + groupe.getNom() + " (" + tournoi.getRondeActive().toString() + ")");
             
             System.out.print("Points : ");
             for (int i = 0; i < listeDruide.size(); ++i) {
@@ -113,7 +113,7 @@ public class UIConsole {
         }
         
 	public void menuPrincipal() {
-            Tournoi tournoi = creerTournoi();
+            tournoi = creerTournoi();
             Ronde ronde = new RondeElimination(null);
             ronde.setListGroupe(tournoi.getListeGroupe());
             tournoi.setRondeActive(ronde);

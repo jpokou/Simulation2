@@ -51,6 +51,10 @@ public class Tournoi {
             rondeActive.jouerRonde(listeGroupe);
         }
         
+        public Ronde getRondeActive() {
+            return this.rondeActive;
+        }
+        
         public void setRondeActive(Ronde ronde) {
             rondeActive = ronde;
         }
