@@ -24,7 +24,7 @@ public class RondeDemiFinale extends Ronde {
     }
 
     @Override
-    public void jouerRonde() {
+    public void jouerRonde(List<Groupe> listeGroupe) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

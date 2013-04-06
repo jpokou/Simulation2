@@ -11,6 +11,7 @@ public class Groupe {
 
 	private ArrayList<Druide> ListeDruide;
 	private String nom;
+        private String rondeRendu;
 
 	public ArrayList<Druide> getListeDruide() {
 		return ListeDruide;
@@ -55,5 +56,19 @@ public class Groupe {
             }
             return lesDruides;
 	}
+
+    /**
+     * @return the rondeRendu
+     */
+    public String getRondeRendu() {
+        return rondeRendu;
+    }
+
+    /**
+     * @param rondeRendu the rondeRendu to set
+     */
+    public void setRondeRendu(String rondeRendu) {
+        this.rondeRendu = rondeRendu;
+    }
 
 }

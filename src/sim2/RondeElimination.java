@@ -50,8 +50,8 @@ public class RondeElimination extends Ronde {
     }
 
     @Override
-    public void jouerRonde() {
-        for (Groupe g : getListGroupe()) {
+    public void jouerRonde(List<Groupe> listeGroupe) {
+        for (Groupe g : listeGroupe) {
             for (Druide d : g.getListeDruide()) {
                 if (d.getActif()) {
                     for (Rune r : d.getListeRune()) {

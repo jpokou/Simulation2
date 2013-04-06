@@ -37,7 +37,7 @@ public abstract class Ronde {
 	 */
 	public abstract int calculerPoints(List<Rune> listeRune);
         
-        public abstract void jouerRonde();
+        public abstract void jouerRonde(List<Groupe> listeGroupe);
 
 	public abstract void JouerPartie();
 
