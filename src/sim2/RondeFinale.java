@@ -16,17 +16,6 @@ public class RondeFinale extends Ronde {
 		throw new UnsupportedOperationException();
 	}
 
-	public void jouerRonde() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void jouerPartie() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void jouerTour() {
-		throw new UnsupportedOperationException();
-	}
 
 	/**
 	 * 
@@ -35,5 +24,20 @@ public class RondeFinale extends Ronde {
 	public int calculerPoints(ArrayList<Rune> listeRune) {
 		throw new UnsupportedOperationException();
 	}
+
+    @Override
+    public void JouerPartie() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void jouerRonde() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void jouerTour() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
 }

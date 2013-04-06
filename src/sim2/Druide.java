@@ -41,16 +41,16 @@ public class Druide {
 		this.nom = nom;
 	}
 
-	public List<Rune> getListeDruide() {
+	public List<Rune> getListeRune() {
 		return this.listeDruide;
 	}
 
 	/**
 	 * 
-	 * @param listeDruide
+	 * @param listeRune
 	 */
-	public void setListeDruide(ArrayList<Rune> listeDruide) {
-		this.listeDruide = listeDruide;
+	public void setListeRune(ArrayList<Rune> listeRune) {
+		this.listeDruide = listeRune;
 	}
 
 	public boolean getActif() {

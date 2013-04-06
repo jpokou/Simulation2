@@ -6,7 +6,7 @@ package sim2;
 
 import java.util.ArrayList;
 
-public class Ronde {
+public abstract class Ronde {
 
 	private ArrayList<Groupe> listGroupe;
 
@@ -21,19 +21,7 @@ public class Ronde {
 	public void setListGroupe(ArrayList<Groupe> listGroupe) {
 		this.listGroupe = listGroupe;
 	}
-
-	public void jouerRonde() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void JouerPartie() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void jouerTour() {
-		throw new UnsupportedOperationException();
-	}
-
+        
 	/**
 	 * 
 	 * @param listeRune
@@ -49,5 +37,11 @@ public class Ronde {
 	public int calculerPoints(ArrayList<Rune> listeRune) {
 		throw new UnsupportedOperationException();
 	}
+        
+        public abstract void jouerRonde();
+
+	public abstract void JouerPartie();
+
+	public abstract void jouerTour();
 
 }

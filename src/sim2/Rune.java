@@ -45,6 +45,8 @@ public class Rune {
             surface = false;
         }
         
+        //int r = (new Random().nextInt(10-0) + 0);
+        
     }
     
     public void set(String nom, int points, char alias)
