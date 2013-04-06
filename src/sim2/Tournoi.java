@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Tournoi {
 
-	private List<Groupe> listeGroupe;
+	private ArrayList<Groupe> listeGroupe;
 	private Druide druideGagnant;
 	public Tournoi() {
 		
@@ -23,7 +23,7 @@ public class Tournoi {
 	 * 
 	 * @param ListeGroupe
 	 */
-	public void setListeGroupe(List<Groupe> listeGroupe) {
+	public void setListeGroupe(ArrayList<Groupe> listeGroupe) {
 		this.listeGroupe = listeGroupe;
 	}
 
@@ -40,7 +40,8 @@ public class Tournoi {
 	}
 
 	public void demarrerTournoi() {
-            throw new UnsupportedOperationException();
+            Ronde ronde = new RondeElimination(listeGroupe);  
+            ronde.jouerRonde();
 	}
 /*
 	public void simulerTournoi() {

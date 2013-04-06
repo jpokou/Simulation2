@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 public class UIConsole {
 
+        public final static int NB_RUNE_LAUKAZ = 3;
+        public final static int NB_RUNE_ANSUZ = 4;
+        public final static int NB_RUNE_FEHU = 3;
+        
+        
 	private ControleurTournoi controleur;
 	private Tournoi tournoi;
 
@@ -24,21 +29,60 @@ public class UIConsole {
         }
         
         public void afficherGroupe(Groupe groupe) {
+            ArrayList<Druide> listeDruide = groupe.getListeDruide();
             System.out.println("Groupe : " + groupe.getNom());
             
             System.out.print("Points : ");
-            for (int i = 0; i < groupe.getListeDruide().size(); ++i) {
+            for (int i = 0; i < listeDruide.size(); ++i) {
                 System.out.print("\t" + groupe.getListeDruide().get(i).getPoint());
             }
             
             System.out.print("\nDruides : ");
-            for (int i = 0; i < groupe.getListeDruide().size(); ++i) {
+            for (int i = 0; i < listeDruide.size(); ++i) {
                 System.out.print("\t" + groupe.getListeDruide().get(i).getNom());
             }
+            
+            System.out.print("\nSurface : ");
+            for (int i = 0; i < listeDruide.size(); ++i) {
+                
+                System.out.print("\t");
+                
+                for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
+                    Rune rune = listeDruide.get(i).getListeRune().get(j);
+                    
+                    if (rune.surface) {
+                        if (rune.clair) {
+                            System.out.print(rune.alias);
+                        } else {
+                            System.out.print(("" +  rune.alias).toUpperCase());
+                        }
+                    }
+                    
+                }
+                
+            } 
+            
+            System.out.print("\nTombee : ");
+            for (int i = 0; i < listeDruide.size(); ++i) {
+                
+                System.out.print("\t");
+                
+                for (int j = 0; j < listeDruide.get(i).getListeRune().size(); ++j) {
+                    Rune rune = listeDruide.get(i).getListeRune().get(j);
+                    
+                    if (!rune.surface) {
+                        System.out.print(("" + rune.alias).toUpperCase());
+                    }
+                    
+                }
+                
+            }
+
         }
         
 	public void menuPrincipal() {
             Tournoi tournoi = creerTournoi();
+            tournoi.demarrerTournoi();
             
             System.out.println("Tournoi De Runes");
             System.out.println("(L)ancer les runes");
@@ -104,10 +148,31 @@ public class UIConsole {
             return new Groupe(nomGroupe, listeDruide);
         }
         
+        public ArrayList<Rune> creerRunes() {
+            ArrayList<Rune> listeRune = new ArrayList<Rune>();
+            Rune rune;
+            
+            for (int i = 0; i < NB_RUNE_LAUKAZ; ++i) {
+                rune = new Rune("Laukaz", 1, 'l');
+                listeRune.add(rune);
+            }
+            
+            for (int i = 0; i < NB_RUNE_ANSUZ; ++i) {
+                rune = new Rune("Ansuz", 1, 'a');
+                listeRune.add(rune);
+            }            
+            
+            for (int i = 0; i < NB_RUNE_FEHU; ++i) {
+                rune = new Rune("Fehu", 1, 'f');
+                listeRune.add(rune);
+            }
+            
+            return listeRune;
+        }
         
         public Druide creerDruide(String nom) {
             
-            return new Druide(nom, null, true, 20);
+            return new Druide(nom, creerRunes(), true, 20);
             
         }
 }

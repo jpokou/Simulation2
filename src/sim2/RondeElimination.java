@@ -14,7 +14,7 @@ public class RondeElimination extends Ronde {
 	 * @param listeGroupe
 	 */
 	public RondeElimination(ArrayList<Groupe> listeGroupe) {
-		throw new UnsupportedOperationException();
+		this.setListGroupe(listeGroupe);
 	}
 
 	/**
